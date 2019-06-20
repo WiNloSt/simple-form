@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom'
 import './styles.css'
 import { Form } from './Form'
 import { SimpleForm } from './libs/simpleForm/index'
-import { defaultFormState } from './survey/reducer'
+import { useServeyData } from './survey/dataProvider'
+import { sortChoices } from './survey/adapter'
 
 function App() {
-  return (
-    <SimpleForm initialValue={defaultFormState}>
+  const { loading, data } = useServeyData()
+
+  return loading ? (
+    'loading'
+  ) : (
+    <SimpleForm initialValue={sortChoices(data)}>
       <Form />
     </SimpleForm>
   )

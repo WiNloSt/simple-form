@@ -7,6 +7,8 @@ export function QuestionChoice({ questionIndex, choiceIndex }) {
   const { getState, dispatch } = useSimpleForm()
   const choice = selectChoiceByIndex(getState(), questionIndex, choiceIndex)
 
+  console.log('props', getState(), questionIndex, choiceIndex)
+  console.log('choice', choice)
   return (
     <LabeledInput
       label={choice.value}

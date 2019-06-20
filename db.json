@@ -1,0 +1,27 @@
+{
+  "survey": {
+    "questions": [
+      {
+        "id": 1,
+        "title": "How would you rate the support you received?",
+        "numberOfChoices": 3,
+        "choices": [
+          { "id": 1, "value": 2, "label": "bad" },
+          { "id": 2, "value": 3, "label": "neutral" },
+          { "id": 3, "value": 4, "label": "good" }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "What could we improve?",
+        "numberOfChoices": 4,
+        "choices": [
+          { "id": 4, "label": "Speed" },
+          { "id": 5, "label": "Reliability" },
+          { "id": 6, "label": "Quality" },
+          { "id": 7, "label": "Communication" }
+        ]
+      }
+    ]
+  }
+}

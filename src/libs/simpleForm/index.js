@@ -10,6 +10,7 @@ import simpleFormContext from './context'
  */
 export const SimpleForm = ({ children, initialValue = {} }) => {
   const [state, dispatch] = useReducer(reducer, initialValue)
+  console.log('state', state)
   const getState = () => state
   return (
     <simpleFormContext.Provider value={{ dispatch, getState }}>

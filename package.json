@@ -5,12 +5,14 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.19.0",
     "ramda": "^0.26.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
+    "json-server": "^0.15.0",
     "typescript": "3.3.3"
   },
   "resolutions": {
@@ -19,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:mock-api": "json-server --watch db.json --port 8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
