@@ -10,7 +10,6 @@ export function PrimaryChoices() {
     <div>
       {Array.from(Array(numberOfChoices)).map((_, index) => {
         const choicesStateIndex = selectPrimaryQuestionChoiceByIndex(getFieldValue([]), index)
-        console.log(choicesStateIndex)
         return <QuestionChoice fieldPath={['choices', choicesStateIndex]} />
       })}
     </div>
