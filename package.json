@@ -12,6 +12,10 @@
   "devDependencies": {
     "typescript": "3.3.3"
   },
+  "resolutions": {
+    "browserslist": "4.6.2",
+    "caniuse-lite": "1.0.30000974"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,3 +1,3 @@
 export const SimpleForm = () => {
-  return null
+  return 'form'
 }
