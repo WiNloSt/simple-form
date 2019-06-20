@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import * as R from 'ramda'
 
-import reducer from './reducer'
+import reducer from '../../survey/reducer'
 import simpleFormContext from './context'
 
 /**

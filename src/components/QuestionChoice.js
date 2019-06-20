@@ -1,9 +1,9 @@
 import React from 'react'
 import { LabeledInput } from '../uiKits/LabeledInput'
-import { useSimpleForm } from '../simpleForm/hooks'
+import { useSimpleForm } from '../libs/simpleForm/hooks'
 
-export function QuestionChoice({ fieldPath, dispatch }) {
-  const { getFieldValue } = useSimpleForm()
+export function QuestionChoice({ fieldPath }) {
+  const { getFieldValue, dispatch } = useSimpleForm()
   const fieldValue = getFieldValue(fieldPath)
 
   return (

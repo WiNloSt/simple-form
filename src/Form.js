@@ -1,6 +1,6 @@
 import React from 'react'
-import { useSimpleForm } from './simpleForm/hooks'
-import { QuestionChoice } from './components/QuestionChoice'
+import { useSimpleForm } from './libs/simpleForm/hooks'
+import { PrimaryChoices } from './components/PrimaryChoices'
 
 export function Form() {
   const { dispatch } = useSimpleForm()
@@ -22,18 +22,5 @@ export function Form() {
 
       <PrimaryChoices />
     </>
-  )
-}
-
-function PrimaryChoices() {
-  const { getFieldValue, dispatch } = useSimpleForm()
-  const numberOfChoices = getFieldValue(['numberOfChoices'])
-
-  return (
-    <div>
-      {Array.from(Array(numberOfChoices)).map((_, index) => (
-        <QuestionChoice fieldPath={['choices', index]} dispatch={dispatch} />
-      ))}
-    </div>
   )
 }
