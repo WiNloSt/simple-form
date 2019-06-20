@@ -23,8 +23,10 @@ function Question({ question, index: questionIndex }) {
     }
   }
   return (
-    <>
-      <h2>{question.title}</h2>
+    <div className="question">
+      <h2>
+        {questionIndex + 1}: {question.title}
+      </h2>
       <label>choices</label>
       <button onClick={() => dispatch(actions.changeNumberOfChoices(2))}>2</button>
       <button onClick={() => dispatch(actions.changeNumberOfChoices(3))}>3</button>
@@ -32,6 +34,6 @@ function Question({ question, index: questionIndex }) {
       <button onClick={() => dispatch(actions.changeNumberOfChoices(5))}>5</button>
 
       <PrimaryChoices questionIndex={questionIndex} />
-    </>
+    </div>
   )
 }
