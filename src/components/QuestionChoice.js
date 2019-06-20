@@ -1,20 +1,22 @@
 import React from 'react'
 import { LabeledInput } from '../uiKits/LabeledInput'
 import { useSimpleForm } from '../libs/simpleForm/hooks'
+import { selectChoiceByIndex } from '../survey/selector'
 
-export function QuestionChoice({ fieldPath }) {
-  const { getFieldValue, dispatch } = useSimpleForm()
-  const fieldValue = getFieldValue(fieldPath)
+export function QuestionChoice({ questionIndex, choiceIndex }) {
+  const { getState, dispatch } = useSimpleForm()
+  const choice = selectChoiceByIndex(getState(), questionIndex, choiceIndex)
 
   return (
     <LabeledInput
-      label={fieldValue.value}
-      value={fieldValue.label}
+      label={choice.value}
+      value={choice.label}
       onChange={e =>
         dispatch({
           type: 'CHANGE_CHOICE_VALUE',
           payload: {
-            field: fieldPath.concat('label'),
+            questionIndex,
+            choiceIndex,
             value: e.target.value
           }
         })

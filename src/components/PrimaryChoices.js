@@ -1,16 +1,23 @@
 import React from 'react'
 import { useSimpleForm } from '../libs/simpleForm/hooks'
 import { QuestionChoice } from './QuestionChoice'
-import { selectPrimaryQuestionChoiceByIndex } from '../survey/selector'
-export function PrimaryChoices() {
-  const { getFieldValue } = useSimpleForm()
-  const numberOfChoices = getFieldValue(['numberOfChoices'])
+import { selectQuestion } from '../survey/selector'
+
+export function PrimaryChoices({ questionIndex }) {
+  const { getState } = useSimpleForm()
+  const formState = getState()
+  const numberOfChoices = selectQuestion(formState, questionIndex).numberOfChoices
 
   return (
     <div>
-      {Array.from(Array(numberOfChoices)).map((_, index) => {
-        const choicesStateIndex = selectPrimaryQuestionChoiceByIndex(getFieldValue([]), index)
-        return <QuestionChoice fieldPath={['choices', choicesStateIndex]} />
+      {Array.from(Array(numberOfChoices)).map((_, choiceIndex) => {
+        return (
+          <QuestionChoice
+            key={choiceIndex}
+            questionIndex={questionIndex}
+            choiceIndex={choiceIndex}
+          />
+        )
       })}
     </div>
   )

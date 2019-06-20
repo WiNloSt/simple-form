@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * @type {React.Context<{
  *   dispatch: (action: {}) => void,
- *   getFieldValue: (path: Array) => Object,
+ *   getState: () => Object,
  * }>}
  */
 // @ts-ignore

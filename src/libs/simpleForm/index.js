@@ -1,6 +1,4 @@
 import React, { useReducer } from 'react'
-import * as R from 'ramda'
-
 import reducer from '../../survey/reducer'
 import simpleFormContext from './context'
 
@@ -12,9 +10,9 @@ import simpleFormContext from './context'
  */
 export const SimpleForm = ({ children, initialValue = {} }) => {
   const [state, dispatch] = useReducer(reducer, initialValue)
-  const getFieldValue = path => R.path(path, state)
+  const getState = () => state
   return (
-    <simpleFormContext.Provider value={{ dispatch, getFieldValue }}>
+    <simpleFormContext.Provider value={{ dispatch, getState }}>
       {children}
     </simpleFormContext.Provider>
   )
